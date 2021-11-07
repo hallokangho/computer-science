@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "node ./big-o/o_n2.js"
+run = "node ./big-o/o_factorial.js"
