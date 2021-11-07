@@ -2,7 +2,7 @@
 
 ### Big-O Complexity Chart
 ![image](https://user-images.githubusercontent.com/83585224/140643583-c1522c09-472e-4254-ae7e-252a34b279b7.png)
-> [bigocheatsheet](https://www.bigocheatsheet.com/
+> [bigocheatsheet](https://www.bigocheatsheet.com/)
 
 <br>
 
