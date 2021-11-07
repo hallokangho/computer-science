@@ -20,7 +20,6 @@
 - [O(1)](./o_1.js)
 - [O(n)](./o_n.js)
 - [O(n2)](./o_n2.js)
-- [O(n^2)](./o_e2.js)
 - [O(n!)](./o_factorial.js)
 
 ### Rule
