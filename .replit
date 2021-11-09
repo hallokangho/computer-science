@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "node ./data-structures/array-reverse.js"
+run = "node ./data-structures/array-sorted-merge.js"
