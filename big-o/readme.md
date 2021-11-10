@@ -35,7 +35,7 @@ function findTarget(target){
 }
 
 // O(n) --> Linear Time
-// 값을 1회 만에 찾더라도 최악의 경우 기준으로 표기
+// 값을 한번의 연산으로 찾더라도 최악의 경우를 기준으로 표기
 ```
 
 <br>
