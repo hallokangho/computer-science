@@ -5,7 +5,7 @@
 //Given an array = [2,3,4,5]:
 //It should return undefined
 
-//Nestd for loop O(n^2)
+//with nestd for loop O(n^2)
 function nestedForLoop(array){
   for(let i=0; i<array.length; i++){
     for(let j=0; j<array.length; j++){
@@ -21,3 +21,5 @@ function nestedForLoop(array){
 }
 
 // console.log(nestedForLoop([2,5,1,2,3,5,1,2,4]));
+
+//with hash O(n)
