@@ -22,5 +22,17 @@ function nestedForLoop(array){
 
 // console.log(nestedForLoop([2,5,1,2,3,5,1,2,4]));
 
+//with map O(n) for recurring 
+function map(array){
+  let map = {};
+  for(let i=0; i<array.length; i++){
+    if(map[array[i]]){
+      return array[i];
+    }else{
+      map[array[i]] = array[i];
+    }
+  }
+  return map;
+}
 
-//with hash O(n) for recurring 
+//console.log(map([1,1,2,4,3,0]));
