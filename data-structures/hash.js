@@ -8,6 +8,7 @@ method
  - hash(key) : generate random value in data size
  - set(key, value) : set key, value pair array inside of data array
  - get(key) : get value from data array by hashed key
+ - keys() : get entire keys from data array
 
 */
 
@@ -49,6 +50,19 @@ class Hash{
       }
     }
   }
+
+  //O(n^2)
+  keys(){
+    const keyArray = [];
+    for(let i=0; i<this.data.length; i++){
+      if(this.data[i]){
+        for(let j=0; j<this.data[i].length; j++){
+          keyArray.push(this.data[i][j][0]);
+        }
+      }
+    }
+    return keyArray;
+  }
 }
 
 const hash = new Hash(3);
@@ -56,5 +70,5 @@ console.log(hash.set('apple', 1));
 console.log(hash.set('nike', 20));
 console.log(hash.set('coke', 1000));
 console.log(hash.set('run', 1200));
-
 console.log(hash.get('apple'));
+console.log(hash.keys());
