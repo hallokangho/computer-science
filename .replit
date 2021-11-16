@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "node ./data-structures/quiz-recurring-character.js"
+run = "node ./data-structures/linked-list.js"
