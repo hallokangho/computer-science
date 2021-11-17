@@ -4,26 +4,36 @@ class Node{
       value:value,
       next:null
     }
-    this.tail=this.head;
-    this.length=1;
   }
 }
 
 class LinkedList{
   constructor(value){
     this.node=new Node(value);
+    this.tail=this.node.head;
+    this.length=1;
   }
 
   //O(1)
   append(value){
     const newNode=new Node(value);
-    this.node.tail.next=newNode;
-    this.node.tail=newNode;
-    this.node.length++;
+    this.tail.next=newNode;
+    this.tail=newNode;
+    this.length++;
+    return this;
+  }
+
+  //O(1)
+  prepend(value){
+    const newNode=new Node(value);
+    newNode.next=this.node.head;
+    this.node.head=newNode;
+    this.length++;
     return this;
   }
 }
 
 const list = new LinkedList('first');
-jsonList = JSON.stringify(list.append('second'));
+list.append('append');
+jsonList = JSON.stringify(list.prepend('prepend'));
 console.log(jsonList);
