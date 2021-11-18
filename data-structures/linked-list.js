@@ -31,9 +31,38 @@ class LinkedList{
     this.length++;
     return this;
   }
+
+  //O(n)
+  insert(index, value){
+    if(index >= this.length){
+      return this.append(value);
+    }
+
+    let newNode = new Node(value);
+    const leader = this.traverse(index-1);
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+  }
+
+  //O(n)
+  traverse(index){
+    let counter = 0;
+    let currentNode = this.node.head;
+
+    while(counter !== index){
+      currentNode = currentNode.next;
+      counter++
+    }
+    return currentNode;
+  }
 }
 
-const list = new LinkedList('first');
-list.append('append');
-jsonList = JSON.stringify(list.prepend('prepend'));
-console.log(jsonList);
+const list = new LinkedList('A');
+list.append('B');
+list.append('C');
+list.append('D');
+
+list.insert(2, '1');
+console.log(JSON.stringify(list));
