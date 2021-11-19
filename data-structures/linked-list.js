@@ -34,32 +34,33 @@ class LinkedList{
 
   //O(n)
   insert(index, value){
-    if(index >= this.length){
+    if(index>=this.length){
       return this.append(value);
     }
 
-    let newNode = new Node(value);
-    const leader = this.traverse(index-1);
-    const holdingPointer = leader.next;
-    leader.next = newNode;
-    newNode.next = holdingPointer;
+    let newNode=new Node(value);
+    const leader= this.traverse(index-1);
+    const holdingPointer= leader.next;
+    leader.next=newNode;
+    newNode.next=holdingPointer;
     this.length++;
   }
 
   //O(n)
   traverse(index){
-    let counter = 0;
-    let currentNode = this.node.head;
+    let counter=0;
+    let currentNode=this.node.head;
 
-    while(counter !== index){
-      currentNode = currentNode.next;
-      counter++
+    while(counter!==index){
+      currentNode=currentNode.next;
+      counter++;
     }
+    
     return currentNode;
   }
 }
 
-const list = new LinkedList('A');
+const list=new LinkedList('A');
 list.append('B');
 list.append('C');
 list.append('D');
