@@ -6,19 +6,16 @@
  */
 var longestCommonPrefix = function(strs) {
     
-    let firstString = strs[0]
     let prefixMap = new Map();
-    
-    //init firstString's map
-    //On
-    for(let i=0; i<firstString.length; i++){
-        prefixMap.set(i, {key: firstString[i], count: 0})
-    }
     
     //increase same character's count in strs array
     //On2
     for(let i=0; i<strs.length; i++){
-        for(let j=0; j<strs[i].length; j++){
+        for(let j=0; j<strs[i].length; j++){   
+           
+            if(i == 0){ //init prefix map
+                prefixMap.set(j, {key: strs[0][j], count: 0})
+            }
 
             if(prefixMap.has(j)){
                 if(prefixMap.get(j).key == strs[i][j]){
@@ -28,8 +25,6 @@ var longestCommonPrefix = function(strs) {
             
         }
     }
-    
-    // console.log('prefixMap-counted : ', prefixMap)
     
     let result = ""
     
@@ -41,8 +36,6 @@ var longestCommonPrefix = function(strs) {
             break
         }
     }
-    
-    // console.log('result : ', result)
     
     return result
 };
