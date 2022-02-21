@@ -2,33 +2,29 @@
  * @param {string} haystack
  * @param {string} needle
  * @return {number}
+ * 
+ * https://leetcode.com/problems/implement-strstr
  */
 var strStr = function(haystack, needle) {
 
-    if(haystack.length == 0){
-        if(haystack[0] == needle[0]){
-            return 0
-        }else{
-            return -1
-        }        
-    }
-
+    //Exception : needle is longer then haystack
     if(haystack.length < needle.length){
         return -1
     }
     
-    if(haystack.length == 1){
-        if(haystack[0] == needle[0]){
-            return 0
-        }
-        
-        if(needle.length == 0){
-            return 0
-        }else{
-            return -1
+    //Exception : needle.length is 0
+    if(needle.length == 0){
+        return 0
+    }    
+    
+    //Find first same letter and campare haystack and needle
+    for(let i=0; i<haystack.length; i++){
+        if(haystack[i] == needle[0]){
+            if(haystack.substr(i, needle.length) == needle){
+                return i
+            }
         }
     }
-
-    // Have to progress
-
+    
+    return -1
 };
