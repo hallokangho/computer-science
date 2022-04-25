@@ -48,6 +48,17 @@ class CircularQueue{
 
     return item
   }
+
+  serach(item){
+    for(let i=0; i<this.list.length; i++){
+      if(this.list[i] == item){
+        return item
+      }
+    }
+
+    return -1
+  }
+  
 }
 
 
@@ -57,3 +68,4 @@ cq.enqueue('b')
 // cq.dequeue()
 
 console.log(cq)
+console.log(cq.serach('c'))
